@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -16,86 +17,121 @@
   }
 }
 
+.btn{
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  display: inline-block;
+  position: relative;
+  /*padding: 1rem 4rem;*/
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  background-color: #feffe0;
+  border-radius: 0.5rem;
+}
+
+.card-skin button{
+  height:50px;
+  width: 100px;
+}
+
+.leftbtn{
+  position: absolute;
+  left:10%;
+  bottom: 15%;
+}
+
+.midleftbtn{
+  position: absolute;
+  left:32%;
+  bottom: 15%;
+}
+
+.midrightbtn{
+  position: absolute;
+  left:53%;
+  bottom: 15%;
+}
+
+.rightbtn{
+  position: absolute;
+  left:75%;
+  bottom: 15%;
+}
+
+.midbtn{
+  position:absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+}
+
+.okbtn{
+  border: 4px groove #56d624;
+}
+
+.ngbtn{
+  border: 4px groove #ff0000;
+}
+
+.flipbtn{
+  border: 4px groove #00b7ff;
+}
+
 * {
   margin:0;
   padding:0;
   box-sizing: border-box;
 }
+
+.head{
+  height:150px;
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+}
+
 body {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.board {
-  display: grid;
-  grid-template-columns: repeat(4, 75px);
-  grid-gap: 8px;
-}
-.card {
-  border-radius: 4px;
-  text-align: center;
-  height: 75px;
-  font-size: 36px;
-  font-weight: bold;
+
+.card-skin{
+  overflow: hidden;
+  border-radius: 8px;
+  width: 600px;
+  height: 400px;
+  box-shadow: 0 4px 15px rgba(0,0,0,.2);
   position: relative;
-  transform-style: preserve-3d;
-  transition: all 0.2s;
-  user-select: none;
+  margin-top: -10px;
+  margin-left: 20px;
+  margin-right:20px;
+  margin-bottom:30px;
 }
-.card.gameover {
-  pointer-events: none;
-}
-.card-0 {
-  transform: rotateY(0deg);
-}
-.card.active {
-  transform: rotateY(180deg);
-}
-.card.matched .card-front {
-  background-color: lightgoldenrodyellow;
-  color: white;
-}
-.card-front,
-.card-back {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  backface-visibility: hidden;
-  height: 100%;
-  border-radius: 50%;
-}
-.card-front {
-  transform: rotateY(180deg);
-  background-color: #eee;
-  line-height: 70px;
-  vertical-align: middle;
+
+.card-skin .card-text{
+  position: relative;
+  top: 30%;
   text-align: center;
-  font-size: 50px;
-  z-index: 2;
-}
-.card-back {
-  background-color: #ddd;
-
-  transform: rotateY(0);
-  z-index: 1;
-}
-.card-back::after {
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  width: 75%;
-  height: 75%;
-  border-radius: 50%;
-}
-.menu {
-  display: flex;
-  justify-content: space-between;
+  font-size:40px;
+  font-weight: bold;
 }
 
-.menu p {
-  font-size: 20px;
-  font-weight: 600;
+
+.posi-centerdiv{
+  position: relative;
 }
